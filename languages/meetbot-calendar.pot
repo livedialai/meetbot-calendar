@@ -1,0 +1,206 @@
+# Copyright (C) 2026 GoFonIA
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: MeetBot Calendar 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-29 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: meetbot-calendar.php
+msgid "MeetBot Kalender"
+msgstr ""
+
+#: meetbot-calendar.php
+msgid "Einstellungen"
+msgstr ""
+
+#: meetbot-calendar.php
+msgid "Lade verfügbare Termine…"
+msgstr ""
+
+#: meetbot-calendar.php
+msgid "Keine Termine verfügbar."
+msgstr ""
+
+#: meetbot-calendar.php
+msgid "Bitte wählen Sie ein Datum."
+msgstr ""
+
+#: meetbot-calendar.php
+msgid "Jetzt buchen"
+msgstr ""
+
+#: meetbot-calendar.php
+msgid "Zurück"
+msgstr ""
+
+#: meetbot-calendar.php
+msgid "Ihr Name"
+msgstr ""
+
+#: meetbot-calendar.php
+msgid "Ihre E-Mail"
+msgstr ""
+
+#: meetbot-calendar.php
+msgid "Notizen (optional)"
+msgstr ""
+
+#: meetbot-calendar.php
+msgid "Termin bestätigen"
+msgstr ""
+
+#: meetbot-calendar.php
+msgid "Termin erfolgreich gebucht!"
+msgstr ""
+
+#: meetbot-calendar.php
+msgid "Fehler bei der Buchung. Bitte versuchen Sie es erneut."
+msgstr ""
+
+#: meetbot-calendar.php
+msgid "Bereitgestellt von"
+msgstr ""
+
+#: includes/class-admin.php
+msgid "API-Schlüssel"
+msgstr ""
+
+#: includes/class-admin.php
+msgid "Verbinden"
+msgstr ""
+
+#: includes/class-admin.php
+msgid "Buchungsseite"
+msgstr ""
+
+#: includes/class-admin.php
+msgid "Dauer"
+msgstr ""
+
+#: includes/class-admin.php
+msgid "Google Meet"
+msgstr ""
+
+#: includes/class-admin.php
+msgid "Google Meet automatisch erstellen"
+msgstr ""
+
+#: includes/class-admin.php
+msgid "Meet.bot E-Mails"
+msgstr ""
+
+#: includes/class-admin.php
+msgid "Meet.bot Bestätigungs-E-Mails unterdrücken"
+msgstr ""
+
+#: includes/class-admin.php
+msgid "Eigene E-Mail"
+msgstr ""
+
+#: includes/class-admin.php
+msgid "Bestätigungs-E-Mail über WordPress/Brevo senden"
+msgstr ""
+
+#: includes/class-admin.php
+msgid "Absender"
+msgstr ""
+
+#: includes/class-admin.php
+msgid "Betreff"
+msgstr ""
+
+#: includes/class-admin.php
+msgid "E-Mail Text (HTML)"
+msgstr ""
+
+#: includes/class-admin.php
+msgid "Platzhalter:"
+msgstr ""
+
+#: includes/class-admin.php
+msgid "Admin-Kopie"
+msgstr ""
+
+#: includes/class-admin.php
+msgid "Leer lassen = keine Admin-Kopie"
+msgstr ""
+
+#: includes/class-admin.php
+msgid "Shortcode"
+msgstr ""
+
+#: includes/class-shortcode.php
+msgid "Bitte alle Pflichtfelder ausfüllen."
+msgstr ""
+
+#: includes/class-shortcode.php
+msgid "Video-Meeting beitreten"
+msgstr ""
+
+#: includes/class-shortcode.php
+msgid "MeetBot nicht konfiguriert."
+msgstr ""
+
+#: includes/class-shortcode.php
+msgid "Keine Buchungsseite gewählt."
+msgstr ""
+
+#: includes/class-shortcode.php
+msgid "Datum & Zeit"
+msgstr ""
+
+#: includes/class-shortcode.php
+msgid "Kontaktdaten"
+msgstr ""
+
+#: includes/class-shortcode.php
+msgid "Bestätigung"
+msgstr ""
+
+#: includes/class-shortcode.php
+msgid "Wählen Sie Datum & Uhrzeit"
+msgstr ""
+
+#: includes/class-shortcode.php
+msgid "Ihre Kontaktdaten"
+msgstr ""
+
+#: includes/class-shortcode.php
+msgid "Name"
+msgstr ""
+
+#: includes/class-shortcode.php
+msgid "E-Mail"
+msgstr ""
+
+#: includes/class-shortcode.php
+msgid "Notizen"
+msgstr ""
+
+#: includes/class-shortcode.php
+msgid "Termin bestätigen"
+msgstr ""
+
+#: includes/class-shortcode.php
+msgid "Termin gebucht!"
+msgstr ""
+
+#: includes/class-shortcode.php
+msgid "Google Meet Video-Meeting"
+msgstr ""
+
+#: includes/class-shortcode.php
+msgid "Link auch per E-Mail gesendet"
+msgstr ""
+
+#: includes/class-shortcode.php
+msgid "Eine Bestätigungs-E-Mail wurde an Sie gesendet."
+msgstr ""

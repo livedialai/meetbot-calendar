@@ -1,0 +1,603 @@
+/**
+ * CalDAV Booking – Frontend Styles
+ * Infomaniak-Farben: Primär #014786, Akzent #00a3e0
+ * Kompaktes Layout: Kalender + Slots nebeneinander
+ */
+
+:root {
+    --cb-primary: #014786;
+    --cb-accent: #00a3e0;
+    --cb-bg: #f8f9fa;
+    --cb-white: #ffffff;
+    --cb-text: #1a1a2e;
+    --cb-text-light: #6b7280;
+    --cb-border: #e2e8f0;
+    --cb-success: #16a34a;
+    --cb-error: #dc2626;
+    --cb-radius: 6px;
+    --cb-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.gomeetme {
+    max-width: 720px;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 13px;
+    color: var(--cb-text);
+    position: relative;
+    line-height: 1.4;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 8px;
+}
+
+/* Steps */
+.caldav-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 0 12px;
+}
+
+.caldav-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    opacity: 0.4;
+    transition: opacity 0.3s;
+}
+
+.caldav-step.active { opacity: 1; }
+.caldav-step.completed .caldav-step-num {
+    background: var(--cb-success);
+    color: #fff;
+}
+
+.caldav-step-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--cb-primary);
+    color: var(--cb-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.caldav-step-label {
+    font-size: 11px;
+    color: var(--cb-text-light);
+    white-space: nowrap;
+}
+
+.caldav-step-line {
+    flex: 1;
+    height: 2px;
+    background: var(--cb-border);
+    margin: 0 6px;
+    margin-bottom: 16px;
+}
+
+/* Step Content */
+.caldav-step-content {
+    display: none;
+    animation: cbFadeIn 0.25s ease;
+}
+.caldav-step-content.active { display: block; }
+
+@keyframes cbFadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.caldav-step-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 14px;
+    color: var(--cb-primary);
+}
+
+/* Event Type Cards */
+.caldav-event-types {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.caldav-event-card {
+    background: var(--cb-white);
+    border: 1px solid var(--cb-border);
+    border-radius: var(--cb-radius);
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: var(--cb-shadow);
+}
+.caldav-event-card:hover {
+    border-color: var(--cb-accent);
+    box-shadow: 0 2px 8px rgba(0,163,224,0.12);
+}
+
+.caldav-event-color {
+    width: 4px;
+    min-height: 32px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.caldav-event-info h4 {
+    margin: 0 0 2px;
+    font-size: 13px;
+    font-weight: 600;
+}
+.caldav-event-info p {
+    margin: 0;
+    font-size: 11px;
+    color: var(--cb-text-light);
+}
+
+.caldav-event-duration {
+    margin-left: auto;
+    background: var(--cb-bg);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--cb-primary);
+    white-space: nowrap;
+}
+
+/* ══════════════════════════════════════════
+   KALENDER + SLOTS nebeneinander
+   ══════════════════════════════════════════ */
+
+.caldav-calendar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.caldav-calendar-nav span {
+    font-size: 13px;
+    font-weight: 600;
+    min-width: 130px;
+    text-align: center;
+}
+
+.caldav-cal-nav {
+    background: none;
+    border: 1px solid var(--cb-border);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--cb-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    padding: 0;
+}
+.caldav-cal-nav:hover {
+    background: var(--cb-primary);
+    color: var(--cb-white);
+    border-color: var(--cb-primary);
+}
+
+/* Kalender + Slots Container nebeneinander */
+.caldav-step2-layout {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Kalender links — feste Breite */
+.caldav-calendar-col {
+    flex: 0 0 auto;
+    min-width: 240px;
+}
+
+.caldav-calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.caldav-cal-header {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--cb-text-light);
+    padding: 4px 0;
+    text-transform: uppercase;
+}
+
+.caldav-cal-day {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: default;
+    color: var(--cb-text-light);
+    border: 1.5px solid transparent;
+    transition: all 0.1s;
+}
+
+.caldav-cal-day.available {
+    cursor: pointer;
+    background: var(--cb-white);
+    color: var(--cb-text);
+    border-color: var(--cb-border);
+}
+.caldav-cal-day.available:hover {
+    border-color: var(--cb-accent);
+    background: rgba(0,163,224,0.04);
+}
+.caldav-cal-day.selected {
+    background: var(--cb-primary);
+    color: var(--cb-white);
+    border-color: var(--cb-primary);
+}
+.caldav-cal-day.today {
+    border-color: var(--cb-accent);
+}
+
+/* ══════════════════════════════════════════
+   SLOTS — scrollbar mit Pfeilen
+   ══════════════════════════════════════════ */
+
+.caldav-slots-col {
+    flex: 1 1 200px;
+    min-width: 180px;
+    max-width: 300px;
+}
+
+.caldav-slots-container {
+    display: none;
+}
+.caldav-slots-container.visible {
+    display: block;
+}
+
+.caldav-slots-container h4 {
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    color: var(--cb-primary);
+}
+
+/* Scroll-Pfeil-Buttons */
+.caldav-scroll-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 28px;
+    border: 1px solid var(--cb-border);
+    border-radius: 4px;
+    background: var(--cb-bg);
+    color: var(--cb-primary);
+    cursor: pointer;
+    font-size: 10px;
+    transition: all 0.15s;
+    padding: 0;
+}
+.caldav-scroll-btn:hover {
+    background: var(--cb-primary);
+    color: var(--cb-white);
+    border-color: var(--cb-primary);
+}
+.caldav-scroll-btn:active {
+    transform: scale(0.97);
+}
+
+.caldav-scroll-btn-up {
+    margin-bottom: 4px;
+}
+.caldav-scroll-btn-down {
+    margin-top: 4px;
+}
+
+/* Slot-Liste — 6 Slots sichtbar, scrollbar */
+.caldav-slots-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--cb-accent) var(--cb-border);
+    padding-right: 4px;
+    scroll-behavior: smooth;
+}
+
+.caldav-slots-list::-webkit-scrollbar {
+    width: 5px;
+}
+.caldav-slots-list::-webkit-scrollbar-track {
+    background: var(--cb-border);
+    border-radius: 3px;
+}
+.caldav-slots-list::-webkit-scrollbar-thumb {
+    background: var(--cb-accent);
+    border-radius: 3px;
+}
+
+/* Slot-Button — verfügbar */
+.caldav-slot-btn {
+    padding: 8px 12px;
+    border: 1px solid var(--cb-border);
+    border-radius: 4px;
+    background: var(--cb-white);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--cb-primary);
+    transition: all 0.1s;
+    width: 100%;
+}
+.caldav-slot-btn:hover {
+    background: var(--cb-primary);
+    color: var(--cb-white);
+    border-color: var(--cb-primary);
+}
+.caldav-slot-btn.selected {
+    background: var(--cb-primary);
+    color: var(--cb-white);
+    border-color: var(--cb-primary);
+}
+
+/* Slot-Button — belegt / nicht verfügbar */
+.caldav-slot-occupied {
+    background: var(--cb-bg) !important;
+    color: #b0b8c4 !important;
+    border-color: #e5e7eb !important;
+    cursor: not-allowed !important;
+    opacity: 0.55;
+    text-decoration: line-through;
+}
+.caldav-slot-occupied:hover {
+    background: var(--cb-bg) !important;
+    color: #b0b8c4 !important;
+    border-color: #e5e7eb !important;
+}
+
+.caldav-no-slots {
+    color: var(--cb-text-light);
+    font-style: italic;
+    padding: 8px 0;
+    font-size: 12px;
+}
+
+/* Summary */
+.caldav-summary {
+    background: var(--cb-bg);
+    border: 1px solid var(--cb-border);
+    border-radius: var(--cb-radius);
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    font-size: 13px;
+}
+.caldav-summary strong { color: var(--cb-primary); }
+
+/* Form */
+.caldav-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.caldav-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+@media (max-width: 580px) {
+    .caldav-form-row { grid-template-columns: 1fr; }
+    .caldav-step2-layout { flex-direction: column; }
+    .caldav-slots-col { max-width: 100%; }
+    .caldav-cal-day { width: 28px; height: 28px; font-size: 11px; }
+}
+
+.caldav-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.caldav-form-group label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--cb-text);
+}
+
+.caldav-form-group input,
+.caldav-form-group textarea {
+    padding: 7px 10px;
+    border: 1px solid var(--cb-border);
+    border-radius: var(--cb-radius);
+    font-size: 13px;
+    font-family: inherit;
+    transition: border-color 0.15s;
+}
+.caldav-form-group input:focus,
+.caldav-form-group textarea:focus {
+    outline: none;
+    border-color: var(--cb-accent);
+    box-shadow: 0 0 0 2px rgba(0,163,224,0.08);
+}
+
+/* Submit */
+.caldav-submit-btn {
+    background: var(--cb-primary);
+    color: var(--cb-white);
+    border: none;
+    border-radius: var(--cb-radius);
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+    width: 100%;
+}
+.caldav-submit-btn:hover { background: #013566; }
+.caldav-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* Back Button */
+.caldav-back-btn {
+    background: none;
+    border: none;
+    color: var(--cb-primary);
+    font-size: 12px;
+    cursor: pointer;
+    padding: 2px 0;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+.caldav-back-btn:hover { color: var(--cb-accent); }
+
+/* Success */
+.caldav-success {
+    text-align: center;
+    padding: 24px 12px;
+}
+.caldav-success-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--cb-success);
+    color: #fff;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+}
+.caldav-success h3 {
+    font-size: 16px;
+    color: var(--cb-success);
+    margin: 0 0 6px;
+}
+.caldav-success p {
+    color: var(--cb-text-light);
+    font-size: 13px;
+}
+
+/* Error */
+.caldav-error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: var(--cb-error);
+    padding: 8px 12px;
+    border-radius: var(--cb-radius);
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+/* Loading */
+.caldav-loading {
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    border-radius: var(--cb-radius);
+}
+.caldav-spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid var(--cb-border);
+    border-top-color: var(--cb-primary);
+    border-radius: 50%;
+    animation: cbSpin 0.7s linear infinite;
+}
+@keyframes cbSpin { to { transform: rotate(360deg); } }
+
+/* Video-Meeting Link auf Erfolgsseite */
+.caldav-success-video {
+    background: var(--cb-bg);
+    border: 1px solid var(--cb-border);
+    border-radius: var(--cb-radius);
+    padding: 14px 16px;
+    margin-top: 16px;
+    text-align: left;
+}
+.caldav-video-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--cb-primary);
+    margin: 0 0 8px;
+}
+.caldav-video-link-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.caldav-video-url {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--cb-accent);
+    word-break: break-all;
+    text-decoration: none;
+}
+.caldav-video-url:hover {
+    text-decoration: underline;
+}
+.caldav-video-copy {
+    background: var(--cb-primary);
+    color: var(--cb-white);
+    border: none;
+    border-radius: var(--cb-radius);
+    padding: 6px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+    white-space: nowrap;
+}
+.caldav-video-copy:hover {
+    background: #013566;
+}
+.caldav-video-hint {
+    font-size: 11px;
+    color: var(--cb-text-light);
+    margin: 8px 0 0;
+    font-style: italic;
+}
+
+/* Powered by */
+.caldav-powered-by {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0 4px;
+    font-size: 11px;
+    color: var(--cb-text-light);
+    opacity: 0.7;
+}
+.caldav-powered-by a {
+    color: var(--cb-accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+.caldav-powered-by a:hover {
+    text-decoration: underline;
+}
