@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: MeetBot Calendar
- * Plugin URI:  https://gofonia.de
+ * Plugin URI:  https://github.com/livedialai/meetbot-calendar
  * Description: Zeigt verfügbare Buchungszeiten von Meet.bot auf deiner WordPress-Seite an. Einfach den API-Key eingeben und loslegen.
  * Version:     1.0.0
  * Author:      GoFonIA
