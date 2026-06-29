@@ -1,97 +1,122 @@
-=== MeetBot Calendar ===
-Contributors: gofonia
+=== GoFonIA Booking Calendar for Meet.bot ===
+Contributors: gomeetme, gofonia
 Tags: booking, calendar, meet-bot, scheduling, video-meeting
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Zeigt verfügbare Buchungszeiten von Meet.bot auf deiner WordPress-Seite an. Mit Google Meet Integration.
+Displays available booking slots from Meet.bot on your WordPress site. Integrates with Google Meet and supports custom confirmation emails.
 
 == Description ==
 
-**MeetBot Calendar** verbindet deine WordPress-Seite mit der [Meet.bot](https://meet.bot) Buchungsplattform. Zeige verfügbare Termine an und lasse Besucher direkt buchen — einfach, schnell, mobil-optimiert.
+**GoFonIA Booking Calendar for Meet.bot** connects your WordPress site with the [Meet.bot](https://meet.bot) scheduling platform. Display available time slots and let visitors book appointments directly on your site.
 
 **Features:**
 
-* Interaktiver Monats-Kalender mit verfügbaren Zeit-Slots
-* Direkte Terminbuchung auf deiner Seite
-* Google Meet Video-Integration (automatische Meet-Links)
-* Eigene Bestätigungs-E-Mails (WordPress/Brevo)
-* Admin-Einstellungen mit API-Key und Buchungsseiten-Auswahl
-* Mehrsprachig (Deutsch/Englisch)
-* Mobile-optimiertes responsives Design
-* "Powered by GoFonIA" Branding
+* Interactive monthly calendar with available time slots
+* Direct appointment booking on your site
+* Google Meet video integration (automatic Meet links)
+* Custom confirmation emails via WordPress
+* Admin settings with API key testing
+* Mobile-responsive design
+* "Powered by GoFonIA" branding
 
-**So funktioniert es:**
+**How it works:**
 
-1. Erstelle einen kostenlosen Account bei [Meet.bot](https://meet.bot)
-2. Verbinde deine Kalender (Google, Outlook, Apple)
-3. Installiere dieses Plugin und gib deinen API-Key ein
-4. Füge den Shortcode `[meetbot_calendar]` auf einer Seite hinzu
-5. Fertig! Besucher können jetzt Termine buchen
+1. Create a free account at [Meet.bot](https://meet.bot)
+2. Connect your calendars (Google, Outlook, Apple)
+3. Install this plugin and enter your API key
+4. Add the shortcode `[meetbot_calendar]` to a page
+5. Done! Visitors can now book appointments
 
-**Meet.bot Vorteile:**
+**Meet.bot benefits:**
 
-* Synchronisiert mit Google Kalender, Microsoft Outlook und Apple Kalender
-* Automatische Google Meet Links für Video-Anrufe
-* Keine Doppelbuchungen durch Echtzeit-Sync
-* Kostenlos nutzbar
+* Syncs with Google Calendar, Microsoft Outlook, and Apple Calendar
+* Automatic Google Meet links for video calls
+* No double bookings through real-time sync
+* Free to use
 
 == Installation ==
 
-1. Lade das Plugin über die WordPress Plugin-Verwaltung hoch oder entpacke den Ordner in `/wp-content/plugins/`
-2. Aktiviere das Plugin unter "Plugins" in WordPress
-3. Gehe zu "Einstellungen > MeetBot Kalender" und trage deinen Meet.bot API-Key ein
-4. Wähle deine Buchungsseite aus
-5. Füge den Shortcode `[meetbot_calendar]` auf einer beliebigen Seite oder einem Beitrag ein
+1. Upload the plugin via the WordPress plugin manager or extract the folder to `/wp-content/plugins/`
+2. Activate the plugin under "Plugins" in WordPress
+3. Go to "Settings > GoFonIA Booking Calendar" and enter your Meet.bot API key
+4. Select your booking page
+5. Add the shortcode `[meetbot_calendar]` to any page or post
+
+== External Services ==
+
+This plugin connects to external services to provide its functionality. Below is a detailed description of each service, what data is sent, and when.
+
+=== Meet.bot API ===
+
+This plugin connects to the [Meet.bot API](https://meet.bot) to retrieve available booking slots and create appointments.
+
+* **What data is sent:** When loading the calendar, the booking page URL is sent to retrieve available time slots. When a visitor books an appointment, their name, email address, optional notes, and the selected time slot are sent to the Meet.bot API.
+* **When data is sent:** Time slots are loaded when a page containing the `[meetbot_calendar]` shortcode is visited. Booking data is sent only when a visitor submits the booking form.
+* **Service provider:** Connected Product S.L. (Spain)
+* **Terms of service:** [Meet.bot Terms](https://meet.bot/terms)
+* **Privacy policy:** [Meet.bot Privacy Policy](https://meet.bot/privacy)
 
 == Frequently Asked Questions ==
 
-= Brauche ich einen Meet.bot Account? =
+= Do I need a Meet.bot account? =
 
-Ja, erstelle einen kostenlosen Account bei [meet.bot](https://meet.bot). Dort erhältst du auch den API-Key.
+Yes, create a free account at [meet.bot](https://meet.bot). There you will also get the API key.
 
-= Welche Kalender werden unterstützt? =
+= Which calendars are supported? =
 
-Meet.bot unterstützt Google Kalender, Microsoft Outlook und Apple Kalender (via CalDAV).
+Meet.bot supports Google Calendar, Microsoft Outlook, and Apple Calendar (via CalDAV).
 
-= Kann ich eigene E-Mails senden? =
+= Can I send custom emails? =
 
-Ja! Aktiviere "Eigene E-Mail senden" in den Einstellungen. Das Plugin sendet dann Bestätigungs-E-Mails über WordPress (z.B. mit Brevo/SMTP). Die E-Mail-Vorlage kann mit Platzhaltern wie {name}, {datum}, {uhrzeit} und {meet_link} angepasst werden.
+Yes! Enable "Send custom email via WordPress" in the settings. The plugin will send confirmation emails via WordPress (e.g., with Brevo/SMTP). The email template can be customized with placeholders like {name}, {datum}, {uhrzeit}, and {meet_link}.
 
-= Funktioniert Google Meet automatisch? =
+= Does Google Meet work automatically? =
 
-Ja, wenn "Google Meet automatisch erstellen" aktiviert ist, erstellt Meet.bot automatisch einen Video-Link für jede Buchung.
+Yes, when "Auto-create Google Meet links" is enabled, Meet.bot automatically creates a video link for each booking.
 
-= Ist das Plugin DSGVO-konform? =
+= Is this plugin GDPR compliant? =
 
-Das Plugin speichert keine personenbezogenen Daten in WordPress. Alle Buchungsdaten werden direkt an Meet.bot übermittelt. Bitte prüfe die Meet.bot Datenschutzbestimmungen für Details.
+The plugin does not store personal data in WordPress. All booking data is transmitted directly to Meet.bot. Please review Meet.bot's privacy policy for details on their data handling.
 
 == Screenshots ==
 
-1. Kalender-Ansicht mit verfügbaren Slots
-2. Buchungsformular
-3. Bestätigungsseite mit Video-Link
-4. Admin-Einstellungen
+1. Calendar view with available slots
+2. Booking form
+3. Confirmation page with video link
+4. Admin settings
 
 == Changelog ==
 
+= 1.0.1 =
+* Renamed to "GoFonIA Booking Calendar for Meet.bot" to clarify branding
+* Translated all descriptions to English
+* Fixed escaping issues (_e to esc_html_e, __ to esc_html__)
+* Moved inline admin script to enqueued JS file
+* Improved input sanitization for settings
+* Documented external services (Meet.bot API)
+* Removed activation webhook
+* Removed unnecessary load_plugin_textdomain() call
+
 = 1.0.0 =
-* Initiale Veröffentlichung
-* Meet.bot API Integration (Slots, Buchung, Kalender)
-* Monats-Kalender mit Slot-Anzeige
-* Buchungsformular mit Name, E-Mail, Notizen
-* Google Meet Video-Integration
-* Eigene Bestätigungs-E-Mails (WordPress/Brevo)
-* Admin-Einstellungen mit API-Key Test
-* Mehrsprachig (Deutsch/Englisch)
-* Mobile-optimiertes responsives Design
-* "Powered by GoFonIA" Footer
+* Initial release
+* Meet.bot API integration (slots, booking, calendar)
+* Monthly calendar with slot display
+* Booking form with name, email, notes
+* Google Meet video integration
+* Custom confirmation emails (WordPress/Brevo)
+* Admin settings with API key test
+* Mobile-responsive design
+* "Powered by GoFonIA" footer
 
 == Upgrade Notice ==
 
+= 1.0.1 =
+Security and compliance improvements. Recommended update.
+
 = 1.0.0 =
-Initiale Veröffentlichung.
+Initial release.
